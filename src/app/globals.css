@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 270 100% 50%;
+    --primary-foreground: 0 0% 100%;
+  }
+
+  /* Improved scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.5s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom styles for code blocks */
+.prose pre {
+  background: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
+  border: 1px solid #3d3d3d;
+}
+
+.prose code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom link underline animation */
+.prose a {
+  background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.purple.500'));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.prose a:hover {
+  background-size: 100% 2px;
+} 
